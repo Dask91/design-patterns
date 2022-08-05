@@ -28,22 +28,51 @@ int main()
     TransportTickets.push_back(TransportTicket { "Québec", "Montréal", "Air Transat", 150.00 });
     TransportTickets.push_back(TransportTicket { "Trois-Rivières", "Sherbrooke", "VIA Rail Canada", 220.45 });
 
-    // Believe me: we are traveling first class!
-    auto Strategy = make_unique<LuxuryTravelStrategy>();
-    TravelPackage Package(Strategy.get());
+    cout << "Do you want the expensive or the budget friendly travel?" << endl;
+    cout << "Options:" << endl;
+    cout << "1) Expensive" << endl;
+    cout << "2) Budget friendly" << endl;
+    cout << "(enter option number)" << endl;
 
-    std::string DepartureLocation = "Montréal";
-    std::string Destination = "Québec";
-    HotelBooking LuxuryHotel = Package.SelectHotel(Destination, HotelBookings);
-    TransportTicket LuxuryTransport = Package.SelectTransport(DepartureLocation, Destination, TransportTickets);
-
-    cout << "The program selected the following bookings for your trip from " << DepartureLocation << " to " << Destination << "." << endl;
-    cout << endl << endl;
-    cout << "You will transit with " << LuxuryTransport.Operator << " (" << LuxuryTransport.Price << " Cad$)." << endl;
-    cout << "Once you arrive in " << Destination << ", a room will be waiting for you at " << LuxuryHotel.Name;
-    cout << " (" << LuxuryHotel.Price << " Cad$)." << endl;
+    int UserInput;
+    cin >> UserInput;
     cout << endl;
-    cout << "Your trip will cost a total of " << LuxuryTransport.Price + LuxuryHotel.Price << " Cad$." << endl;
+
+    // Boilerplate to map the user input to a strategy
+    unique_ptr<TravelStrategy> Strategy;
+    switch (UserInput)
+    {
+        case 1:
+            Strategy = make_unique<LuxuryTravelStrategy>();
+            break;
+
+        case 2:
+            Strategy = make_unique<BudgetTravelStrategy>();
+            break;
+
+        default:
+            cout << "Please enter a valid option number." << endl;
+    }
+
+    if (Strategy)
+    {
+        TravelPackage Package(Strategy.get());
+
+        std::string DepartureLocation = "Montréal";
+        std::string Destination = "Québec";
+        HotelBooking LuxuryHotel = Package.SelectHotel(Destination, HotelBookings);
+        TransportTicket LuxuryTransport = Package.SelectTransport(DepartureLocation, Destination, TransportTickets);
+
+        cout << "The program selected the following bookings for your trip from " << DepartureLocation << " to " << Destination << "." << endl;
+        cout << endl << endl;
+        cout << "You will transit with " << LuxuryTransport.Operator << " (" << LuxuryTransport.Price << " Cad$)." << endl;
+        cout << "Once you arrive in " << Destination << ", a room will be waiting for you at " << LuxuryHotel.Name;
+        cout << " (" << LuxuryHotel.Price << " Cad$)." << endl;
+        cout << endl;
+        cout << "Your trip will cost a total of " << LuxuryTransport.Price + LuxuryHotel.Price << " Cad$." << endl;
+
+
+    }
 
     return 0;
 }
