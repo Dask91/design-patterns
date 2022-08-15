@@ -18,6 +18,7 @@ int main()
     HotelBookings.push_back(HotelBooking { "Hôtel Delta", "Trois-Rivieres", 219.00 });
     HotelBookings.push_back(HotelBooking { "L'Hôtel Universel", "Québec", 222.00 });
     HotelBookings.push_back(HotelBooking { "Le Château Frontenac", "Québec", 559.00 });
+    HotelBookings.push_back(HotelBooking { "Four Seasons Hôtel Montréal", "Montréal", 775.00 });
 
     // Register all available transport seats
     std::vector<TransportTicket> TransportTickets;
@@ -70,8 +71,6 @@ int main()
         cout << " (" << LuxuryHotel.Price << " Cad$)." << endl;
         cout << endl;
         cout << "Your trip will cost a total of " << LuxuryTransport.Price + LuxuryHotel.Price << " Cad$." << endl;
-
-
     }
 
     return 0;
