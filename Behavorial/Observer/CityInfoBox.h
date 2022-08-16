@@ -7,7 +7,7 @@ class CityInfoBox : public InfoWidget, public Fl_Box
 {
 public:
 
-    CityInfoBox(int X, int Y, int Width, int Height, const char *Label = 0) : Fl_Box(X, Y, Width, Height, Label) {};
+    CityInfoBox(int X, int Y, int Width, int Height, const char* Label = 0) : Fl_Box(X, Y, Width, Height, Label) {};
     void Display() override;   
 };
 

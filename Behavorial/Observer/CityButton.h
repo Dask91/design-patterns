@@ -13,10 +13,10 @@ class CityButton : public Fl_Button, public InfoSubject
 
 public:
 
-    CityButton(int X, int Y, int Width, int Height, const char *Label = 0) : Fl_Button(X, Y, Width, Height, Label) {};
+    CityButton(int X, int Y, int Width, int Height, const char* Label = 0) : Fl_Button(X, Y, Width, Height, Label) {};
 
-    void AttachInfo(InfoWidget *Info) override;
-    void DetachInfo(InfoWidget *Info) override;
+    void AttachInfo(InfoWidget* Info) override;
+    void DetachInfo(InfoWidget* Info) override;
     void DisplayInfos() override;
 
 protected:
@@ -25,17 +25,17 @@ protected:
 
 private:
 
-    std::vector<InfoWidget *> CityInfos;
+    std::vector<InfoWidget*> CityInfos;
 
 };
 
 
-void CityButton::AttachInfo(InfoWidget *Info)
+void CityButton::AttachInfo(InfoWidget* Info)
 {
     CityInfos.push_back(Info);
 }
 
-void CityButton::DetachInfo(InfoWidget *Info)
+void CityButton::DetachInfo(InfoWidget* Info)
 {
     CityInfos.erase(std::remove(CityInfos.begin(), CityInfos.end(), Info), CityInfos.end());
 }
