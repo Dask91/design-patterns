@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
     // Register available hotel bookings to select from
-    std::vector<HotelBooking> HotelBookings;
+    vector<HotelBooking> HotelBookings;
     HotelBookings.push_back(HotelBooking { "Hôtels et Suites Le Dauphin", "Montréal", 202.00 });
     HotelBookings.push_back(HotelBooking { "Comfort Inn Sherbrooke", "Sherbrooke", 148.00 });
     HotelBookings.push_back(HotelBooking { "Hôtel Delta", "Trois-Rivieres", 219.00 });
@@ -21,7 +21,7 @@ int main()
     HotelBookings.push_back(HotelBooking { "Four Seasons Hôtel Montréal", "Montréal", 775.00 });
 
     // Register all available transport seats
-    std::vector<TransportTicket> TransportTickets;
+    vector<TransportTicket> TransportTickets;
     TransportTickets.push_back(TransportTicket { "Montréal", "Québec", "VIA Rail Canada", 160.00 });
     TransportTickets.push_back(TransportTicket { "Montréal", "Québec", "Air Transat", 650.00 });
     TransportTickets.push_back(TransportTicket { "Montréal", "Québec", "VIA Rail Canada", 220.45 });
@@ -59,8 +59,8 @@ int main()
     {
         TravelPackage Package(Strategy.get());
 
-        std::string DepartureLocation = "Montréal";
-        std::string Destination = "Québec";
+        string DepartureLocation = "Montréal";
+        string Destination = "Québec";
         HotelBooking LuxuryHotel = Package.SelectHotel(Destination, HotelBookings);
         TransportTicket LuxuryTransport = Package.SelectTransport(DepartureLocation, Destination, TransportTickets);
 

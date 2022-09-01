@@ -10,9 +10,6 @@ class BudgetTravelStrategy : public TravelStrategy
 
 public:
 
-    BudgetTravelStrategy() = default;
-    ~BudgetTravelStrategy() = default;
-
     HotelBooking SelectHotel(const std::string& Location, std::vector<HotelBooking> Hotels) override;
     
     TransportTicket SelectTransport(const std::string& From,
