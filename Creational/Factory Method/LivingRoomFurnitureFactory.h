@@ -7,15 +7,11 @@
 
 class LivingRoomFurnitureFactory : public FurnitureFactory
 {
-
 public:
-
-    LivingRoomFurnitureFactory() = default;
-    ~LivingRoomFurnitureFactory() = default;
-
     std::unique_ptr<Furniture> Suggest(DecorStyle Style) override;
 
 };
+
 
 std::unique_ptr<Furniture> LivingRoomFurnitureFactory::Suggest(DecorStyle Style)
 {

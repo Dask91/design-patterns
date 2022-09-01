@@ -12,25 +12,25 @@ struct PaintingInfo
     std::string Style;
 };
 
+
 class Painting : public Furniture
 {
 
 public:
 
-    Painting(PaintingInfo PaintingSpecifics, FurnitureInfo BaseInfo) { _PaintingSpecifics = PaintingSpecifics, _BaseInfo = BaseInfo; };
-    ~Painting() = default;
+    Painting(PaintingInfo PaintingSpecifics, FurnitureInfo BaseInfo) { PaintingSpecifics = PaintingSpecifics, BaseInfo = BaseInfo; };
 
-    std::string GetDescription() override { return _BaseInfo.Description; };
-    int GetItemCode() override { return _BaseInfo.Code; };
+    std::string GetDescription() override { return BaseInfo.Description; };
+    int GetItemCode() override { return BaseInfo.Code; };
 
-    std::string GetName() { return _PaintingSpecifics.Name; };
-    std::string GetAuthor() { return _PaintingSpecifics.Author; };
-    std::string GetYear() { return _PaintingSpecifics.Year; };
-    std::string GetStyle() { return _PaintingSpecifics.Style; };
+    std::string GetName() { return PaintingSpecifics.Name; };
+    std::string GetAuthor() { return PaintingSpecifics.Author; };
+    std::string GetYear() { return PaintingSpecifics.Year; };
+    std::string GetStyle() { return PaintingSpecifics.Style; };
 
 private:
 
-    PaintingInfo _PaintingSpecifics;
-    FurnitureInfo _BaseInfo;
+    PaintingInfo PaintingSpecifics;
+    FurnitureInfo BaseInfo;
 
 };

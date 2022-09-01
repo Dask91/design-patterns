@@ -12,11 +12,9 @@ struct FurnitureInfo
 
 class Furniture
 {
-
 public:
 
     virtual ~Furniture() {};
     virtual std::string GetDescription() = 0;
     virtual int GetItemCode() = 0;
-    
 };

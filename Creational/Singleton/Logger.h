@@ -14,8 +14,6 @@ public:
     // The only way to obtain a Logger instance
     static Logger& GetLogger();
 
-    ~Logger() = default;
-
     Logger(const Logger& Copy) = delete;
     Logger& operator=(const Logger& Copy) = delete;
     

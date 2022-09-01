@@ -10,6 +10,8 @@ class InfoSubject
 
 public:
 
+    virtual ~InfoSubject() {};
+
     virtual void AttachInfo(InfoWidget* Info) = 0;
     virtual void DetachInfo(InfoWidget* Info) = 0;
     virtual void DisplayInfos() = 0;

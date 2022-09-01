@@ -9,17 +9,16 @@ class Rug : public Furniture
 
 public:
 
-    Rug(std::string Fabric, FurnitureInfo BaseInfo) { _Fabric = Fabric, _BaseInfo = BaseInfo; };
-    ~Rug() = default;
+    Rug(std::string Fabric, FurnitureInfo BaseInfo) { Fabric = Fabric, BaseInfo = BaseInfo; };
 
-    std::string GetDescription() override { return _BaseInfo.Description; };
-    int GetItemCode() override { return _BaseInfo.Code; };
+    std::string GetDescription() override { return BaseInfo.Description; };
+    int GetItemCode() override { return BaseInfo.Code; };
 
-    std::string GetFabric() { return _Fabric; };
+    std::string GetFabric() { return Fabric; };
 
 private:
 
-    std::string _Fabric;
-    FurnitureInfo _BaseInfo;
+    std::string Fabric;
+    FurnitureInfo BaseInfo;
     
 };

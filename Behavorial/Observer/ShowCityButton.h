@@ -8,12 +8,12 @@
 
 
 // Displays various informations about a city when pressed.
-class CityButton : public Fl_Button, public InfoSubject
+class ShowCityButton : public Fl_Button, public InfoSubject
 {
 
 public:
 
-    CityButton(int X, int Y, int Width, int Height, const char* Label = 0) : Fl_Button(X, Y, Width, Height, Label) {};
+    ShowCityButton(int X, int Y, int Width, int Height, const char* Label = 0) : Fl_Button(X, Y, Width, Height, Label) {};
 
     void AttachInfo(InfoWidget* Info) override;
     void DetachInfo(InfoWidget* Info) override;
@@ -30,17 +30,17 @@ private:
 };
 
 
-void CityButton::AttachInfo(InfoWidget* Info)
+void ShowCityButton::AttachInfo(InfoWidget* Info)
 {
     CityInfos.push_back(Info);
 }
 
-void CityButton::DetachInfo(InfoWidget* Info)
+void ShowCityButton::DetachInfo(InfoWidget* Info)
 {
     CityInfos.erase(std::remove(CityInfos.begin(), CityInfos.end(), Info), CityInfos.end());
 }
 
-void CityButton::DisplayInfos()
+void ShowCityButton::DisplayInfos()
 {
     // The point of the observer design pattern
     // This generic approach is not coupled to specific UI elements
@@ -50,7 +50,7 @@ void CityButton::DisplayInfos()
     }
 }
 
-int CityButton::handle(int Event)
+int ShowCityButton::handle(int Event)
 {
     if (Event == FL_PUSH)
     {

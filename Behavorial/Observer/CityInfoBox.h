@@ -1,4 +1,3 @@
-#include <assert.h>
 #include <FL/Fl_Box.H>
 #include "InfoSubject.h"
 

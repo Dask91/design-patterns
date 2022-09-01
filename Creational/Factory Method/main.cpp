@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     // Client needs to redecorate the living room
-    std::unique_ptr<FurnitureFactory> FurnitureService = make_unique<LivingRoomFurnitureFactory>();
+    unique_ptr<FurnitureFactory> FurnitureService = make_unique<LivingRoomFurnitureFactory>();
 
     cout << "What decorative style are you searching for?" << endl;
     cout << "Options:" << endl;
@@ -47,7 +47,7 @@ int main()
     {
         // Use the factory method!
         // Initialization of the Furniture object is deferred to the FurnitureFactory
-        std::unique_ptr<Furniture> Suggestion = FurnitureService->Suggest(Style);
+        unique_ptr<Furniture> Suggestion = FurnitureService->Suggest(Style);
 
         if (Suggestion)
         {

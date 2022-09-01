@@ -1,0 +1,8 @@
+This repository aims to show examples of the GOF design patterns.
+The applications themselves really don't do much. The point is only to implement design patterns.
+
+A few notes about the coding style:
+
+	1) CPP files are discarded to ease browsing of these simple programs. In a production setting, I would use implementation files where appropriate.
+	2) Class names don't always reference the design pattern terminology. Therefore you will find a FurnitureFactory class in the Factory Method pattern example, but the Logger class never references its design pattern (the Singleton). In the Visitor example, the Visitor is just a FileOperation but its Visit() methods make it clear what the class is about. The elements that accept the Visitor are File objects. The naming I chose to use is very arbitrary across the examples, as sometimes the extra reference to the design terminology appeared useful, sometimes not as much. Hopefully it is possible to follow the ideas of the pattern without always carrying these references.
+	3) The general coding style is not my favorite or something I necessarily advocate for. Consistency matters the most to me.
